@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="survey-container">
+    <h2>{{ currentQuestion?.question_text }}</h2> <!-- Обновлено -->
+    <form [formGroup]="surveyForm">
+        <div class="options-container" *ngFor="let answer of currentQuestion?.answers; index as i">
+            <input type="radio" [value]="answer.id_answer" formControlName="selectedAnswer">
+            <label>{{ answer.answer_text }}</label> <!-- Обновлено -->
+        </div>
+        <button type="button" (click)="prevQuestion()">Назад</button>
+        <button type="button" (click)="nextQuestion()">Вперёд</button>
+    </form>
+  </div>
+
+  <div *ngIf="recommendedSubscription">
+    Рекомендованная подписка: {{recommendedSubscription.type_name}}
+  </div>
+</body>
+</html>
