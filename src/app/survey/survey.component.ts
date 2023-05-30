@@ -47,58 +47,103 @@ export class SurveyComponent implements OnInit {
   nextQuestion(): void {
     if(this.currentIndex <= this.questions.length - 1){
       if(this.surveyForm && this.surveyForm.get('selectedAnswer')){
-        const selectedAnswerId = this.surveyForm.get('selectedAnswer')!.value;
+        const selectedAnswerId = this.surveyForm.get('selectedAnswer')?.value;
         this.surveyService.processAnswer(selectedAnswerId).subscribe(result => {
           this.selectedSubscriptions = result;
-          if (this.currentIndex === 0) { // first question
-            if (selectedAnswerId === 4 || selectedAnswerId === 3) {
+          if (this.currentIndex === 0) { 
+            if (selectedAnswerId === 3) { // (if the user is junior)
+              this.currentIndex = 9;
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            } 
+            if (selectedAnswerId === 4) { // (if the user is senior)
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.surveyForm.reset();
-            } else {
-              this.currentIndex++;
+            }
+            if(selectedAnswerId === 2) { // (if the user between 18-59 y.o.)
+              this.currentIndex = 5; 
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-          } else if(this.currentIndex === 1){ // second question
-            if(selectedAnswerId === 5 || selectedAnswerId === 8){
+          } 
+
+          else if(this.currentIndex === 9) {
+            if(selectedAnswerId === 16) {
+              this.currentIndex = 6; // the coach line of questions
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.surveyForm.reset();
-            } else if(selectedAnswerId === 6) {
-              this.currentIndex = 5;
+            }
+            if(selectedAnswerId === 17) {
+              this.currentIndex = 6; // the coach line of questions
+              this.recommendedSubscription = this.selectedSubscriptions[0];
+              this.surveyForm.reset();
+            }
+          }
+
+          else if(this.currentIndex === 5) { // if the user > 27 y.o.
+            if(selectedAnswerId === 18) { // if true
+              this.currentIndex = 10;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
-            } else if(selectedAnswerId === 7) {
+            }
+            if(selectedAnswerId === 19) {
+              this.currentIndex = 6; // the coach line of questions
+              this.recommendedSubscription = this.selectedSubscriptions[0];
+              this.surveyForm.reset();
+            }
+          }
+
+          else if(this.currentIndex === 10) {
+            if(selectedAnswerId === 31) {
+              this.currentIndex = 3;
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            }
+            if(selectedAnswerId === 32) {
               this.currentIndex = 2;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-          } 
-          else if(this.currentIndex === 2){ // third question
-            if(selectedAnswerId === 9) { //standart subscription answer was picked
-              this.currentIndex = 4; // goto 5 question;
+          }
+
+          else if(this.currentIndex === 2) {// in which time the user prefer to fitness (unlimited)
+            if(selectedAnswerId === 11 || selectedAnswerId === 12 || selectedAnswerId === 13) {
+              this.currentIndex = 6; // the coach line of questions
+              this.recommendedSubscription = this.selectedSubscriptions[0];
+              this.surveyForm.reset();
+            } 
+          }
+          
+          else if(this.currentIndex === 3){ // in which time the user prefer to fitness (standart)
+            if(selectedAnswerId === 14 || selectedAnswerId === 15) {
+              this.currentIndex = 6; // the coach line of questions
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
-            }  
-          } 
-          else if(this.currentIndex === 4) { //fifth question
-            if(selectedAnswerId === 14 || selectedAnswerId === 15) {
+            }
+          }          
+          
+          else if(this.currentIndex === 6) { //if the user want to buy a train from coaches;
+            if(selectedAnswerId === 20) {
+              this.currentIndex = 7;
+            } else {
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.surveyForm.reset();
             }
-          } 
-          else if(this.currentIndex === 5) { //sixth question
-            if(selectedAnswerId === 10) {
-            this.currentIndex = 3; //goto 4 question
-            }
-            this.currentQuestion = this.questions[this.currentIndex];
-            this.surveyForm.reset();
           }
-          else if(this.currentIndex === 3) { //fourth question
-            if(selectedAnswerId === 11 || selectedAnswerId === 12 || selectedAnswerId === 13) {
-              this.recommendedSubscription = this.selectedSubscriptions[0];
+          
+          else if(this.currentIndex === 7) { //findCoachByGender
+            if(selectedAnswerId === 22 || selectedAnswerId === 23 || selectedAnswerId === 24) {
+              this.currentIndex = 8;
+              this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-          } else {
+          }
+
+          // else if (this.currentIndex === 8) { //findCoachByCategory
+          //   if(selectedAnswerId === )
+          // }
+
+          else {
             this.currentIndex++;
             this.currentQuestion = this.questions[this.currentIndex];
             this.surveyForm.reset();

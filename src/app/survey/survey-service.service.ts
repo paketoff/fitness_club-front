@@ -19,7 +19,7 @@ export class SurveyService {
     return this.http.post(`${this.apiUrl}/survey/answers`, { answerId });
   }
 
-  // getAnswerById(id: number): Observable<any> {
-  //   return this.http.get(`${this.apiUrl}/answer/${id}`);
-  // }
+  getAnswerById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/answer/${id}`);
+  }
 }
