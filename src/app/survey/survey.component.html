@@ -8,11 +8,11 @@
 </head>
 <body>
   <div class="survey-container">
-    <h2>{{ currentQuestion?.question_text }}</h2> <!-- Обновлено -->
+    <h2>{{ currentQuestion?.question_text }}</h2> 
     <form [formGroup]="surveyForm">
         <div class="options-container" *ngFor="let answer of currentQuestion?.answers; index as i">
             <input type="radio" [value]="answer.id_answer" formControlName="selectedAnswer">
-            <label>{{ answer.answer_text }}</label> <!-- Обновлено -->
+            <label>{{ answer.answer_text }}</label> 
         </div>
         <button type="button" (click)="prevQuestion()">Назад</button>
         <button type="button" (click)="nextQuestion()">Вперёд</button>
@@ -21,6 +21,10 @@
 
   <div *ngIf="recommendedSubscription">
     Рекомендованная подписка: {{recommendedSubscription.type_name}}
+  </div>
+  <br>
+  <div *ngIf="recommendedCoaches">
+    Рекомендованные тренера: {{recommendedCoaches.name}}, {{recommendedCoaches.surname}}, {{recommendedCoaches.rating}}
   </div>
 </body>
 </html>
