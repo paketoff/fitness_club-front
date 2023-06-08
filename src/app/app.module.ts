@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SurveyComponent,
-
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
