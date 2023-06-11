@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, sequenceEqual, take } from 'rxjs';
 import { SurveyService } from './survey-service.service';
-
+import * as q from './questions';
+import * as ans from './answers';
 @Component({
   selector: 'app-survey',
   templateUrl: './survey.component.html',
@@ -46,7 +47,6 @@ export class SurveyComponent implements OnInit {
     this.surveyQuestions$ = this.surveyService.getQuestions();
   }
 
-  //GOVNOKOD!
   nextQuestion(): void {
     if(this.currentIndex <= this.questions.length - 1){
       if(this.surveyForm && this.surveyForm.get('selectedAnswer')){
@@ -54,194 +54,193 @@ export class SurveyComponent implements OnInit {
         this.surveyService.processAnswer(selectedAnswerId).subscribe(result => {
           this.selectedSubscriptions = result;
           this.selectedCoaches = result;
-          if (this.currentIndex === 0) { 
-            if (selectedAnswerId === 3) { // (if the user is junior)
-              this.currentIndex = 9;
+          if (this.currentIndex === q.Q_AGE_CATEGORY) { 
+            if (selectedAnswerId === ans.A_AGE_12_17) { // (if the user is junior)
+              this.currentIndex = q.Q_FREQ_TRAINING_J;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             } 
-            if (selectedAnswerId === 4) { // (if the user is senior)
+            if (selectedAnswerId === ans.A_AGE_60) { // (if the user is senior)
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 2) { // (if the user between 18-59 y.o.)
-              this.currentIndex = 5; 
+            if(selectedAnswerId === ans.A_AGE_18_59) { // (if the user between 18-59 y.o.)
+              this.currentIndex = q.Q_AGE_27; 
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           } 
 
-          else if(this.currentIndex === 9) {
-            if(selectedAnswerId === 16) {
-              this.currentIndex = 6; // the coach line of questions
+          else if(this.currentIndex === q.Q_FREQ_TRAINING_J) {
+            if(selectedAnswerId === ans.A_ANYTIME_JUN) {
+              this.currentIndex = q.Q_TRIAL_TRAINING; // the coach line of questions
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 17) {
-              this.currentIndex = 6; // the coach line of questions
+            if(selectedAnswerId === ans.A_2_3_JUN) {
+              this.currentIndex = q.Q_TRIAL_TRAINING; // the coach line of questions
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 5) { // if the user > 27 y.o.
-            if(selectedAnswerId === 18) { // if true
-              this.currentIndex = 10;
+          else if(this.currentIndex === q.Q_AGE_27) { // if the user > 27 y.o.
+            if(selectedAnswerId === ans.A_YES) { // if true
+              this.currentIndex = q.Q_TRAINING_WEEKLY;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 19) {
-              this.currentIndex = 6; // the coach line of questions
-              this.currentQuestion = this.questions[this.currentIndex];
-              this.surveyForm.reset();
-            }
-          }
-
-          else if(this.currentIndex === 10) {
-            if(selectedAnswerId === 31) {
-              this.currentIndex = 3;
-              this.currentQuestion = this.questions[this.currentIndex];
-              this.surveyForm.reset();
-            }
-            if(selectedAnswerId === 32) {
-              this.currentIndex = 2;
+            if(selectedAnswerId === ans.A_NO) {
+              this.currentIndex = q.Q_TRIAL_TRAINING; // the coach line of questions
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 2) {// in which time the user prefer to fitness (unlimited)
-            if(selectedAnswerId === 11 || selectedAnswerId === 12 || selectedAnswerId === 13) {
-              this.currentIndex = 6; // the coach line of questions
+          else if(this.currentIndex === q.Q_TRAINING_WEEKLY) {
+            if(selectedAnswerId === ans.A_2_3_S) {
+              this.currentIndex = q.Q_TRAINING_TIME_S;
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            }
+            if(selectedAnswerId === ans.A_UNLIM_S) {
+              this.currentIndex = q.Q_TRAINING_TIME_B;
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            }
+          }
+
+          else if(this.currentIndex === q.Q_TRAINING_TIME_B) {// in which time the user prefer to fitness (unlimited)
+            if(selectedAnswerId === ans.A_MORNING || selectedAnswerId === ans.A_AFTERNOON || selectedAnswerId === ans.A_ANYTIME) {
+              this.currentIndex = q.Q_TRIAL_TRAINING; // the coach line of questions
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             } 
           }
           
-          else if(this.currentIndex === 3){ // in which time the user prefer to fitness (standart)
-            if(selectedAnswerId === 14 || selectedAnswerId === 15) {
-              this.currentIndex = 6; // the coach line of questions
+          else if(this.currentIndex === q.Q_TRAINING_TIME_S){ // in which time the user prefer to fitness (standart)
+            if(selectedAnswerId === ans.A_FIRSTH_S || selectedAnswerId === ans.A_SECH_S) {
+              this.currentIndex = q.Q_TRIAL_TRAINING; // the coach line of questions
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }          
           
-          else if(this.currentIndex === 6) { //if the user want to try a coach;
-            if(selectedAnswerId === 20) {
-              this.currentIndex = 7;
+          else if(this.currentIndex === q.Q_TRIAL_TRAINING) { //if the user want to try a coach;
+            if(selectedAnswerId === ans.A_YES_COACH) {
+              this.currentIndex = q.Q_COACH_GENDER;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             } 
-            if(selectedAnswerId === 21) {
-              //TODO: show the list of recommended subs;
+            if(selectedAnswerId === ans.A_NO_COACH) {
               this.recommendedSubscription = this.selectedSubscriptions[0];
               this.surveyForm.reset();
             }
           }
           
-          else if(this.currentIndex === 7) { //findCoachByGender
-            if(selectedAnswerId === 22) {
-              this.currentIndex = 8; //woman coach
+          else if(this.currentIndex === q.Q_COACH_GENDER) { //findCoachByGender
+            if(selectedAnswerId === ans.A_FEMALE) {
+              this.currentIndex = q.Q_COACH_CATEGORY_F; //woman coach
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 23) {  //man coach
-              this.currentIndex = 11;
+            if(selectedAnswerId === ans.A_MALE) {  //man coach
+              this.currentIndex = q.Q_COACH_CATEGORY_M;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             } 
-            if(selectedAnswerId === 24) { //doesn't matter
-              this.currentIndex = 12;
+            if(selectedAnswerId === ans.A_ANY) { //doesn't matter
+              this.currentIndex = q.Q_COACH_CATEGORY_N;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             } 
           }
 
-          else if(this.currentIndex === 8) { //findWomanCoachByCategory {}
-            if(selectedAnswerId === 27) { // personal woman coach
-              this.currentIndex = 13;
+          else if(this.currentIndex === q.Q_COACH_CATEGORY_F) { //findWomanCoachByCategory {}
+            if(selectedAnswerId === ans.A_PERS_COACH_F) { // personal woman coach
+              this.currentIndex = q.Q_TRAINING_TIME_F_P;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 28) { // group woman coach
-              this.currentIndex = 16;
+            if(selectedAnswerId === ans.A_GROUP_COACH_F) { // group woman coach
+              this.currentIndex = q.Q_TRAINING_TIME_F_G;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }   
 
-          else if(this.currentIndex === 11) {
-            if(selectedAnswerId === 25) { //personal man coach
-              this.currentIndex = 14;
+          else if(this.currentIndex === q.Q_COACH_CATEGORY_M) {
+            if(selectedAnswerId === ans.A_PERS_COACH) { //personal man coach
+              this.currentIndex = q.Q_TRAINING_TIME_M_P;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
-            if(selectedAnswerId === 26) { //group man coach
-              this.currentIndex = 17;
-              this.currentQuestion = this.questions[this.currentIndex];
-              this.surveyForm.reset();
-            }
-          }
-
-          else if(this.currentIndex === 12) {
-            if(selectedAnswerId === 29) { //women & men personal coaches;
-              this.currentIndex = 15;
-              this.currentQuestion = this.questions[this.currentIndex];
-              this.surveyForm.reset();
-            }
-            if(selectedAnswerId === 30) { //women & men group coaches;
-              this.currentIndex = 18; 
+            if(selectedAnswerId === ans.A_GROUP_COACH) { //group man coach
+              this.currentIndex = q.Q_TRAINING_TIME_M_G;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 13) {
-            if(selectedAnswerId === 33 || selectedAnswerId === 34) {
+          else if(this.currentIndex === q.Q_COACH_CATEGORY_N) {
+            if(selectedAnswerId === ans.A_PERS_COACH_N) { //women || men personal coaches;
+              this.currentIndex = q.Q_TRAINING_TIME_N_P;
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            }
+            if(selectedAnswerId === ans.A_GROUP_COACH_N) { //women || men group coaches;
+              this.currentIndex = q.Q_TRAINING_TIME_N_G; 
+              this.currentQuestion = this.questions[this.currentIndex];
+              this.surveyForm.reset();
+            }
+          }
+
+          else if(this.currentIndex === q.Q_TRAINING_TIME_F_P) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_F_P || selectedAnswerId === ans.A_PREF_AFTERNOON_F_P) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 14) {
-            if(selectedAnswerId === 35 || selectedAnswerId === 36) {
+          else if(this.currentIndex === q.Q_TRAINING_TIME_M_P) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_M_P || selectedAnswerId === ans.A_PREF_AFTERNOON_M_P) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 15) {
-            if(selectedAnswerId === 37 || selectedAnswerId === 38) {
+          else if(this.currentIndex === q.Q_TRAINING_TIME_N_P) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_N_P || selectedAnswerId === ans.A_PREF_AFTERNOON_N_P) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 16) {
-            if(selectedAnswerId === 39 || selectedAnswerId === 40) {
+          else if(this.currentIndex === q.Q_TRAINING_TIME_F_G) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_F_G || selectedAnswerId === ans.A_PREF_AFTERNOON_F_G) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 17) {
-            if(selectedAnswerId === 41 || selectedAnswerId === 42) {
+          else if(this.currentIndex === q.Q_TRAINING_TIME_M_G) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_M_G || selectedAnswerId === ans.A_PREF_AFTERNOON_M_G) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
           }
 
-          else if(this.currentIndex === 18) {
-            if(selectedAnswerId === 43 || selectedAnswerId === 44) {
+          else if(this.currentIndex === q.Q_TRAINING_TIME_N_G) {
+            if(selectedAnswerId === ans.A_PREF_MORNING_N_G || selectedAnswerId === ans.A_PREF_AFTERNOON_N_G) {
               this.recommendedCoaches = this.selectedCoaches;
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
@@ -257,16 +256,8 @@ export class SurveyComponent implements OnInit {
   
   
   prevQuestion(): void{
-    if(this.currentIndex > 0){
-      this.currentIndex--;
-      this.currentQuestion = this.questions[this.currentIndex];
-      this.surveyForm.reset();
-      if(this.surveyForm && this.surveyForm.get('selectedAnswer')){
-        const selectedAnswerId = this.surveyForm.get('selectedAnswer')!.value;
-        this.surveyService.processAnswer(selectedAnswerId).subscribe(result => {
-          this.selectedSubscriptions = result;
-        });
-      }
-    }
+    this.currentIndex = q.Q_AGE_CATEGORY;
+    this.currentQuestion = this.questions[this.currentIndex];
+    this.surveyForm.reset();
   }
 }
