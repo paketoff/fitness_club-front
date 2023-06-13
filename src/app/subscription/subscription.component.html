@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="subscriptions">
+    <div class="container">
+      <div *ngIf="subscriptions.length > 0; else noSubscriptions">
+        <div *ngFor="let sub of subscriptions">
+          <h2>{{ sub.type_name }}</h2>
+          <h2>{{ sub.price }}</h2>
+          <h2>{{ sub.description }}</h2>
+        </div>
+      </div>
+
+      <ng-template #noSubscriptions>
+        <p>No subscriptions available.</p>
+      </ng-template>
+    </div>
+  </section>
+</body>
+</html>

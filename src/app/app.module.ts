@@ -8,6 +8,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { MainPageComponent } from './home/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { LoginComponent } from './auth/login/login.component';
     SurveyComponent,
     RegisterComponent,
     LoginComponent,
+    SubscriptionComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,

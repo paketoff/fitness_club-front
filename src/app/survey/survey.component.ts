@@ -43,10 +43,6 @@ export class SurveyComponent implements OnInit {
     });
   }
 
-  private getSurveyQuestions(): void {
-    this.surveyQuestions$ = this.surveyService.getQuestions();
-  }
-
   nextQuestion(): void {
     if(this.currentIndex <= this.questions.length - 1){
       if(this.surveyForm && this.surveyForm.get('selectedAnswer')){
