@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="workouts">
+    <div class="container">
+      <div *ngIf="workouts.length > 0; else noWorkouts">
+        <div *ngFor="let workout of workouts">
+          <h2>{{ workout.workout_name }}</h2>
+          <h2>{{ workout.description }}</h2>
+          <h2>{{ workout.duration }}</h2>
+          <h2>{{ workout.duration }}</h2>
+          <img [src]="workout.img_src" alt="Workout Image">
+        </div>
+      </div>
+
+      <ng-template #noWorkouts>
+        <p>No subscriptions available.</p>
+      </ng-template>
+    </div>
+  </section>
+</body>
+</html>

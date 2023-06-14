@@ -10,6 +10,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { MainPageComponent } from './home/main-page/main-page.component';
+import { CoachComponent } from './coach/coach.component';
+import { WorkoutsComponent } from './workouts/workouts.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { MainPageComponent } from './home/main-page/main-page.component';
     RegisterComponent,
     LoginComponent,
     SubscriptionComponent,
+    CoachComponent,
     MainPageComponent,
+    WorkoutsComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,

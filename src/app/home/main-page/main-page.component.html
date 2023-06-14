@@ -8,8 +8,10 @@
 </head>
 <body>
   <section id="landing">
-  
     <div class="container">
+      <div class="header">
+        <a routerLink="/userProfile">PROFILE</a>
+      </div>
       <div class="landing__wrapper">
         <h1 class="landing__header">The <br>Body <br>Club</h1>
         <h2 class="landing__subheader">
@@ -33,24 +35,11 @@
       </div>
     </div>
   </section>
-  <section id="workouts">
-    <div class="container">
-      <div class="workouts__type">
-        <img src="" alt="">
-        <div class="workouts__subheader"></div>
-        <div class="workouts__text"></div>
-      </div>
-    </div>
-    <!-- TODO: Do here more items. -->
-  </section>
+  <app-workouts></app-workouts>
   <section id="subscriptions">
     <app-subscription></app-subscription>
   </section>
-  <section id="coaches">
-    <div class="container">
-      <h2>MEET THE EXPERTS</h2>
-    </div>
-  </section>
+  <app-coach></app-coach>
   <section id="reviews">
     <div class="container">
       <h2>REVIEWS</h2>

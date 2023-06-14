@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="coaches">
+    <div class="container">
+      <h2>НАШИ ТРЕНЕРА</h2>
+      <div *ngIf="coaches.length > 0; else noCoaches">
+        <div *ngFor="let coach of coaches">
+          <h2>{{ coach.name }}</h2>
+          <h2>{{coach.surname}}</h2>
+          <h2>{{coach.rating}}</h2>
+          <h2>{{coach.train_price}}</h2>
+          <img [src]="coach.img_url" alt="Coach image">
+        </div>
+      </div>
+      
+      <ng-template #noCoaches>
+        <h2>No coaches found.</h2>
+      </ng-template>
+    </div>
+  </section>
+</body>
+</html>

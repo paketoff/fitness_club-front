@@ -24,4 +24,6 @@ export class AuthService {
       })
     );
   }
+
+  // logout user();
 }

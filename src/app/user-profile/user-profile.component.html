@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="user_profile">
+    <div class="container">
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <label>
+          Name:
+          <input type="text" formControlName="name">
+        </label>
+
+        <label>
+          Surname:
+          <input type="text" formControlName="surname">
+        </label>
+
+        <label>
+          Email:
+          <input type="email" formControlName="email">
+        </label>
+
+        <label>
+          Phone:
+          <input type="tel" formControlName="phone">
+        </label>
+
+        <label>
+          Password:
+          <input type="password" formControlName="password">
+        </label>
+
+        <label>
+          Avatar:
+          <input type="text" formControlName="img_src">
+          <img [src]="profileForm.controls['img_src'].value" alt="Avatar" *ngIf="profileForm.controls['img_src'].value">
+        </label>
+      
+        <button (click)="startEditing()" *ngIf="!isEditing">Изменить</button>
+        <button type="submit" *ngIf="isEditing">Обновить профиль</button>
+      </form>
+    </div>
+  </section>
+</body>
+</html>
