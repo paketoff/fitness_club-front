@@ -30,7 +30,7 @@ export class UserProfileComponent implements OnInit {
           name: user.name,
           surname: user.surname,
           email: user.email,
-          // password: user.password,
+          password: user.password,
           img_src: user.img_src,
           phone: user.phone,
         });

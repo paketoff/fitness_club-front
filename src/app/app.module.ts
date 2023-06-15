@@ -13,6 +13,7 @@ import { MainPageComponent } from './home/main-page/main-page.component';
 import { CoachComponent } from './coach/coach.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CoachScheduleComponent } from './coach-schedule/coach-schedule.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     MainPageComponent,
     WorkoutsComponent,
     UserProfileComponent,
+    CoachScheduleComponent,
   ],
   imports: [
     BrowserModule,
