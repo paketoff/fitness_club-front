@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -33,7 +33,10 @@ export class UserProfileService {
     return this.http.get<any>(`${this.apiUrl}/subscriptions/get-users-subscriptions`, { headers: this.headers });
   }
 
-  getUserWorkoutHistories(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/workout-history/user-history`, { headers: this.headers });
+  getUserWorkoutHistories(page: number = 1, limit: number = 5): Observable<any> {
+    const params = new HttpParams()
+      .set('page', page.toString())
+      .set('limit', limit.toString());
+    return this.http.get<any>(`${this.apiUrl}/workout-history/user-history`, { headers: this.headers, params: params });
   }
 }

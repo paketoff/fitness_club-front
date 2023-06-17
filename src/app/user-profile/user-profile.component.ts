@@ -11,6 +11,8 @@ export class UserProfileComponent implements OnInit {
 
   profileForm: FormGroup;
   isEditing: boolean = false;
+  currentPage: number = 1;
+  limit: number = 5;
   subscriptionInfoForms: FormArray = this.fb.array([]);
   workoutHistoriesForms: FormArray = this.fb.array([]);
 
@@ -36,6 +38,12 @@ export class UserProfileComponent implements OnInit {
   } 
 
   ngOnInit(): void {
+    this.loadProfile();
+    this.loadSubscriptions();
+    this.loadWorkouts();
+  }
+
+  loadProfile(): void {
     this.userProfileService.getCurrentUser().subscribe(
       user => {
         this.profileForm.patchValue({
@@ -48,7 +56,9 @@ export class UserProfileComponent implements OnInit {
         });
       }
     );
-    
+  }
+
+  loadSubscriptions(): void {
     this.userProfileService.getUserSubscriptions().subscribe(
       subscriptions => {
         subscriptions.forEach((subscription: any) => {
@@ -56,14 +66,34 @@ export class UserProfileComponent implements OnInit {
         });
       }
     );
+  }
 
-    this.userProfileService.getUserWorkoutHistories().subscribe(
-      workouts => {
-        workouts.forEach((workout: any) => {
+  loadWorkouts(): void {
+    this.userProfileService.getUserWorkoutHistories(this.currentPage, this.limit).subscribe(workouts => {
+      this.workoutHistoriesForms.clear();
+      workouts.data.forEach((workout: any) => {
           this.workoutHistoriesForms.push(this.createUserWorkoutHistoryForm(workout));
-        })
+      });
+    });
+  }
+
+  onPreviousPage(): void {
+    if (this.currentPage > 1) { 
+      this.currentPage--;
+      this.loadWorkouts();
+    }
+  }
+  
+  onNextPage(): void {
+    this.userProfileService.getUserWorkoutHistories(this.currentPage + 1, this.limit).subscribe(workouts => {
+      if (workouts.data.length > 0) { 
+        this.currentPage++;
+        this.workoutHistoriesForms.clear();
+        workouts.data.forEach((workout: any) => {
+            this.workoutHistoriesForms.push(this.createUserWorkoutHistoryForm(workout));
+        });
       }
-    )
+    });
   }
 
   createSubscriptionForm(subscription: any): FormGroup {
