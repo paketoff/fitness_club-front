@@ -5,6 +5,9 @@ import { SurveyComponent } from './survey/survey.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { CoachScheduleComponent } from './coach-schedule/coach-schedule.component';
+import { TrainingBookingComponent } from './training-booking/training-booking.component';
+import { SubscriptionOrderComponent } from './subscription-order/subscription-order.component';
 
 const routes: Routes = [
   {path: 'home', component: MainPageComponent},
@@ -12,6 +15,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'userProfile', component: UserProfileComponent},
+  {path: 'coach-schedule/get-all-schedules', component: CoachScheduleComponent},
+  {path: 'training-booking/:scheduleId', component: TrainingBookingComponent},
+  {path: 'order-subscription', component: SubscriptionOrderComponent}
 ];
 
 @NgModule({

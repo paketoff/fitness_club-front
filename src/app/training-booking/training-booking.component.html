@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div class="book__form">
+      <form [formGroup]="bookForm" (ngSubmit)="submit()">
+        <p>удостовертесь, правильная ли информация?</p> <br>
+        <input type="text" formControlName="date" placeholder="Date" readonly>
+        <input type="text" formControlName="start_time" placeholder="Start time" readonly>
+        <input type="text" formControlName="end_time" placeholder="End time" readonly>
+        <input type="text" formControlName="coach_name" placeholder="Coach name" readonly> 
+        <input type="text" formControlName="coach_surname" placeholder="Coach surname" readonly> 
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

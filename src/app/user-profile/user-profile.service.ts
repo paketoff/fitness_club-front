@@ -21,8 +21,6 @@ export class UserProfileService {
 
   //for the user
   updateCurrentUser(updatedData: any): Observable<any> {
-    console.log(localStorage.getItem('access_token'));
-    console.log(this.headers);
     return this.http.put<any>(`${this.apiUrl}/users/profile`, updatedData, { headers: this.headers });
   }
   

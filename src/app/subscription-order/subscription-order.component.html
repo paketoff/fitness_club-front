@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="subscription_order">
+    <div class="container">
+      <div class="sub_order__form">
+        <form [formGroup]="subscriptionForm">
+          <label>Оберіть бажаний тип подписки:
+              <select formControlName="subscription_type_id">
+                  <option *ngFor="let sub of subscriptions" [value]="sub.id_subscription_type">{{sub.type_name}}</option>
+              </select>
+          </label>
+          <button class="btn btn-primary" (click)="open(content)">Submit</button>
+      </form>
+        <ng-template #noSubscriptions>
+          <p>No subscriptions available.</p>
+        </ng-template>
+    </div>
+    <div class="modal">
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-basic-title">Confirm Subscription</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Subscription Unique Number: {{subscriptionForm.get('subscription_type_id')?.value}}</p>
+          <p>Subscription Type: {{subscription.type_name}}</p>
+          <p>Subscription Price: {{subscription.price}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cancel click')">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Save</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+  </section>
+</body>
+</html>

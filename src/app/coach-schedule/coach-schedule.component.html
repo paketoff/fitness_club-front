@@ -1,1 +1,21 @@
-<p>coach-schedule works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="coach_schedules">
+    <div class="container">
+      <div *ngFor="let item of schedule">
+        <p>{{item.work_date}}: {{item.workPeriod_Start}} - {{item.workPeriod_End}}</p>
+        <p>{{item.additional_info}}</p>
+        <p>{{item.coach.name}}</p>,
+        <p>{{item.coach.surname}}</p>
+        <button routerLink="/training-booking/{{item.id_schedule}}">Book</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

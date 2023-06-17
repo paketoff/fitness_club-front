@@ -14,6 +14,9 @@ import { CoachComponent } from './coach/coach.component';
 import { WorkoutsComponent } from './workouts/workouts.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CoachScheduleComponent } from './coach-schedule/coach-schedule.component';
+import { TrainingBookingComponent } from './training-booking/training-booking.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SubscriptionOrderModule } from './subscription-order/subscription-order.module';
 
 @NgModule({
   declarations: [
@@ -27,12 +30,15 @@ import { CoachScheduleComponent } from './coach-schedule/coach-schedule.componen
     WorkoutsComponent,
     UserProfileComponent,
     CoachScheduleComponent,
+    TrainingBookingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgbModule,
+    SubscriptionOrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

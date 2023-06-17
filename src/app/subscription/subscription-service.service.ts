@@ -20,16 +20,4 @@ export class SubscriptionService {
     return this.http.get(`${this.apiUrl}/subscriptions/get-users-subscriptions`, user);
   }
 
-  //for admin
-  createSubscription(user_id: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/subscriptions/create-sub`, user_id);
-  }
-
-  updateSubscriptionById(id: number): Observable<any> {
-    return this.http.put(`${this.apiUrl}/subscriptions/:id`, id);
-  }
-
-  deleteSubscriptionById(id: any): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/subscriptions/:id`, id);
-  }
 }
