@@ -28,4 +28,12 @@ export class UserProfileService {
   updateUserById(id: number, updatedData: any): Observable<any> {
     return this.http.put<any>(`/profile/${id}`, updatedData);
   }
+
+  getUserSubscriptions(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/subscriptions/get-users-subscriptions`, { headers: this.headers });
+  }
+
+  getUserWorkoutHistories(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/workout-history/user-history`, { headers: this.headers });
+  }
 }

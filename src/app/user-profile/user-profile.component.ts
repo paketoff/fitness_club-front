@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { UserProfileService } from './user-profile.service';
 
 @Component({
@@ -11,6 +11,18 @@ export class UserProfileComponent implements OnInit {
 
   profileForm: FormGroup;
   isEditing: boolean = false;
+  subscriptionInfoForms: FormArray = this.fb.array([]);
+  workoutHistoriesForms: FormArray = this.fb.array([]);
+
+  // Creating a FormGroup to hold the FormArray
+  subscriptionInfoFormGroup: FormGroup = this.fb.group({
+    subscriptions: this.subscriptionInfoForms,
+  });
+
+  workoutHistoriesFormGroup: FormGroup = this.fb.group({
+    workouts: this.workoutHistoriesForms,
+  })
+
 
   constructor(private fb: FormBuilder, private userProfileService: UserProfileService) {
     this.profileForm = this.fb.group({
@@ -36,7 +48,46 @@ export class UserProfileComponent implements OnInit {
         });
       }
     );
+    
+    this.userProfileService.getUserSubscriptions().subscribe(
+      subscriptions => {
+        subscriptions.forEach((subscription: any) => {
+          this.subscriptionInfoForms.push(this.createSubscriptionForm(subscription));
+        });
+      }
+    );
+
+    this.userProfileService.getUserWorkoutHistories().subscribe(
+      workouts => {
+        workouts.forEach((workout: any) => {
+          this.workoutHistoriesForms.push(this.createUserWorkoutHistoryForm(workout));
+        })
+      }
+    )
   }
+
+  createSubscriptionForm(subscription: any): FormGroup {
+    return this.fb.group({
+      start_period: [{value: subscription.start_period, disabled: true}],
+      end_period: [{value: subscription.end_period, disabled: true}],
+      trains_count: [{value: subscription.trains_count, disabled: true}],
+      price: [{value: subscription.price, disabled: true}],
+    });
+  }
+
+  createUserWorkoutHistoryForm(workoutHistory: any): FormGroup {
+    console.log(workoutHistory);
+    return this.fb.group({
+      date: [{value: workoutHistory.date, disabled: true}],
+      start_time: [{value: workoutHistory.start_time, disabled: true}],
+      end_time: [{value: workoutHistory.end_time, disabled: true}],
+      coach_name: [{value: workoutHistory.coach.name, disabled: true}],
+      coach_surname: [{value: workoutHistory.coach.surname, disabled: true}],
+      workout: [{value: workoutHistory.workout.workout_name, disabled: true}],
+      workout_type: [{value: workoutHistory.workout_type.type_name, disabled: true}],
+    });
+  }
+
 
   startEditing(): void {
     this.isEditing = true;
@@ -51,5 +102,4 @@ export class UserProfileComponent implements OnInit {
       this.profileForm.disable(); //block the form after put-request
     });
   }
-
 }

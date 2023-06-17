@@ -29,8 +29,6 @@
           <input type="tel" formControlName="phone">
         </label>
 
-       
-
         <label>
           Avatar:
           <input type="text" formControlName="img_src">
@@ -40,7 +38,76 @@
         <button (click)="startEditing()" *ngIf="!isEditing">Изменить</button>
         <button type="submit" *ngIf="isEditing">Обновить профиль</button>
       </form>
-    </div>
+
+      <h3 class="subscription_info"> YOUR SUBSCRIPTION INFO: </h3>
+      <form [formGroup]="subscriptionInfoFormGroup">
+        <div formArrayName="subscriptions" class="subscription_info__form">
+          <div *ngFor="let subscriptionForm of subscriptionInfoForms.controls; let i = index" [formGroupName]="i">
+            <label>
+              Your Price:
+              <input type="number" formControlName="price"> 
+            </label>
+
+            <label>
+              Your Start Period:
+              <input type="date" formControlName="start_period"> 
+            </label>
+
+            <label>
+              Your End Period:
+              <input type="date" formControlName="end_period">
+            </label>
+
+            <label>
+              Your Trains Count:
+              <input type="number" formControlName="trains_count">
+            </label>
+          </div>
+        </div>
+      </form>
+
+      <h3> YOUR WORKOUT HISTORY: </h3>
+      <form [formGroup]="workoutHistoriesFormGroup">
+        <div formArrayName="workouts" class="workouts_info__form">
+          <div *ngFor="let workoutHistoriesForms of workoutHistoriesForms.controls; let i = index" [formGroupName]="i">
+            <label>
+              Date of train:
+              <input type="date" formControlName="date"> 
+            </label>
+
+            <label>
+              Start Time of train:
+              <input type="time" formControlName="start_time"> 
+            </label>
+
+            <label>
+              End Time of train:
+              <input type="time" formControlName="end_time"> 
+            </label>
+
+            <label>
+              Coach Name:
+              <input type="text" formControlName="coach_name"> 
+            </label>
+
+            <label>
+              Coach Surname:
+              <input type="text" formControlName="coach_surname"> 
+            </label>
+
+            <label>
+              Workout:
+              <input type="text" formControlName="workout"> 
+            </label>
+
+            <label>
+              Workout Type:
+              <input type="text" formControlName="workout_type"> 
+            </label>
+          </div>
+        </div>
+      </form>
+    </div> 
   </section>
 </body>
 </html>
