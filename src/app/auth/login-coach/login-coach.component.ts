@@ -4,33 +4,35 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-coach',
+  templateUrl: './login-coach.component.html',
+  styleUrls: ['./login-coach.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginCoachComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, 
-    private authService: AuthService, 
-    private router: Router) { }
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+  ) { }
 
-  loginForm = this.fb.group({
+  loginCoachForm = this.fb.group({
     email: [''],
     password: [''],
   });
 
-  
   error!: string;
-  
+
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    this.authService.loginUser(this.loginForm.value).subscribe(res => {
+    this.authService.loginCoach(this.loginCoachForm.value).subscribe(res => {
       this.router.navigate(['/home']);
     },
     err => {
       this.error = err.error.message;
     });
   }
+
 }

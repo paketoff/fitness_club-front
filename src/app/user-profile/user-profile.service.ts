@@ -24,14 +24,10 @@ export class UserProfileService {
     return this.http.put<any>(`${this.apiUrl}/users/profile`, updatedData, { headers: this.headers });
   }
   
-  //for the admin
-  updateUserById(id: number, updatedData: any): Observable<any> {
-    return this.http.put<any>(`/profile/${id}`, updatedData);
-  }
 
   getUserSubscriptions(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/subscriptions/get-users-subscriptions`, { headers: this.headers });
-  }
+  } 
 
   getUserWorkoutHistories(page: number = 1, limit: number = 5): Observable<any> {
     const params = new HttpParams()

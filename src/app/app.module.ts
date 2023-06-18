@@ -17,6 +17,8 @@ import { CoachScheduleComponent } from './coach-schedule/coach-schedule.componen
 import { TrainingBookingComponent } from './training-booking/training-booking.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SubscriptionOrderModule } from './subscription-order/subscription-order.module';
+import { CoachProfileComponent } from './coach-profile/coach-profile.component';
+import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SubscriptionOrderModule } from './subscription-order/subscription-order
     UserProfileComponent,
     CoachScheduleComponent,
     TrainingBookingComponent,
+    CoachProfileComponent,
+    LoginCoachComponent,
   ],
   imports: [
     BrowserModule,

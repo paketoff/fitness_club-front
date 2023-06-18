@@ -26,7 +26,9 @@ export class UserProfileComponent implements OnInit {
   })
 
 
-  constructor(private fb: FormBuilder, private userProfileService: UserProfileService) {
+  constructor(
+    private fb: FormBuilder, 
+    private userProfileService: UserProfileService) {
     this.profileForm = this.fb.group({
       name: [{value: '', disabled: true}],
       surname: [{value: '', disabled: true}],

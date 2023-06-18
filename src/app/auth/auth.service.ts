@@ -25,5 +25,19 @@ export class AuthService {
     );
   }
 
+  registerCoach(user: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/register-coach`, user);
+  }
+
+  loginCoach(user: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/auth/login-coach`, user).pipe(
+      tap((res: any) => {
+        if (res && res.access_token) {
+          localStorage.setItem('access_token', res.access_token);
+        }
+      })
+    );
+  }
+
   // logout user();
 }
