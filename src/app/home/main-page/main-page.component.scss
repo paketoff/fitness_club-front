@@ -1,0 +1,85 @@
+#landing {
+  background-image: url('https://i.imgur.com/1o1vmiv.jpg'); // Замените путь на путь к вашей конкретной картинке
+  background-size: cover; // Растягивает изображение, чтобы заполнить контейнер
+  background-position: center; // Центрирует изображение
+  height: 100vh; // Задает высоту секции равной высоте экрана пользователя
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end; // выравнивает элементы по правому краю
+  padding: 9px; // добавьте отступы, если это необходимо
+}
+
+.header a {
+  font-family: 'Inter';
+  color: #000; // или любой другой цвет
+  text-decoration: none;
+  padding: 10px 20px; // добавьте отступы, если это необходимо
+  border-radius: 5px; // добавьте радиус границы, если это необходимо
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 29px;
+  text-align: justify;
+
+  color: #000000;
+}
+
+.landing__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%; 
+  margin-left: 43px;
+
+  .landing__header {
+    position: absolute;
+    width: 176px;
+    height: 228px;
+    left: 50px;
+    top: 68px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 77px;
+    text-align: justify;
+  }
+
+  .landing__subheader {
+    position: absolute;
+    width: 497px;
+    height: 415px;
+    left: 1191px;
+    top: 291px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: justify;
+  }
+
+  .landing__subscription {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 360px;
+    height: 92px;
+    left: 1150px;
+    top: 435px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 55px;
+    text-align: center;
+  }
+}

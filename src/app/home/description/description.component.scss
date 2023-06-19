@@ -1,0 +1,70 @@
+#description {
+  background-color: #F4EEEE; 
+
+  .container {
+    .description__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+
+      &::after {
+        content: '';
+        flex: auto;
+      }
+
+      .description__header {
+        width: 100%;
+        text-align: center;
+        text-decoration-line: underline;
+        font-weight: 500;
+        font-size: 64px;
+        line-height: 77px;
+        color: #000000;
+        margin-bottom: 50px;
+        margin-top: 100px;
+      }
+
+      .description__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; // для выравнивания текста по центру относительно изображения
+        margin-bottom: 50px;
+
+        &--reverse {
+          flex-direction: row-reverse;
+        }
+
+        .description__img_wrapper {
+          flex-basis: 40%;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        .description__text_equipment {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 30px;
+          text-align: justify;
+          color: #000000;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+
+        .description__text_audio {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 30px;
+          text-align: justify;
+          color: #000000;
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+    }
+  }
+}

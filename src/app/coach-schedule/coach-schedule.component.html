@@ -7,15 +7,18 @@
 </head>
 <body>
   <section id="coach_schedules">
+    <h2 class="schedules__header">Записи на тренування</h2>
     <div class="container">
+      <div class="book_form">
       <div *ngFor="let item of schedule">
-        <p>{{item.work_date}}: {{item.workPeriod_Start}} - {{item.workPeriod_End}}</p>
-        <p>{{item.additional_info}}</p>
-        <p>{{item.coach.name}}</p>,
-        <p>{{item.coach.surname}}</p>
-        <button routerLink="/training-booking/{{item.id_schedule}}">Book</button>
+        <p>Дата та час зайняття: {{item.work_date}}: {{item.workPeriod_Start}} - {{item.workPeriod_End}}</p>
+        <p>Додаткова інформація: {{item.additional_info}}</p>
+        <p>Ім'я тренера: {{item.coach.name}}</p>
+        <p>Прізвище тренера: {{item.coach.surname}}</p>
+        <button routerLink="/training-booking/{{item.id_schedule}}">Забронювати</button>
       </div>
     </div>
+  </div>
   </section>
 </body>
 </html>

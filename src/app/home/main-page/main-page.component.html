@@ -1,55 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness-Club</title>
-</head>
-<body>
-  <section id="landing">
-    <div class="container">
-      <div class="header">
-        <a routerLink="/userProfile">PROFILE</a>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness-Club</title>
+  </head>
+  <body>
+    <section id="landing">
+      <div class="container">
+        <div class="header">
+          <a href="#workouts">ТРЕНУВАННЯ</a>
+          <a href="#subscriptions">АБОНЕМЕНТИ</a>
+          <a href="#coaches">ТРЕНЕРА</a>
+          <a routerLink="/userProfile">ПРОФІЛЬ</a>
+        </div>
+        <div class="landing__wrapper">
+          <h1 class="landing__header">The<br> Body<br> Club</h1>
+          <h2 class="landing__subheader">
+            GIVE YOUR BODY<br>
+            THE LOVE IT<br>
+            DESERVES.
+          </h2>
+          <button class="landing__subscription">ПРИДБАТИ</button>
+        </div>
       </div>
-      <div class="landing__wrapper">
-        <h1 class="landing__header">The <br>Body <br>Club</h1>
-        <h2 class="landing__subheader">
-          GIVE YOUR BODY<br>
-          THE LOVE IT<br>
-          DESERVES.
-        </h2>
-        <button class="landing__subscription">BUY SUBSCRIPTION</button>
-      </div>
-    </div>
-  </section>
-  <section id="description">
-    <div class="container">
-      <div class="description__wrapper">
-        <h2 class="description__header">The Body Club</h2>
-        <img src="" alt="" class="description__equipment_img">
-        <div class="description__text_equipment"></div>
-        <img src="" alt="" class="description__audio_img">
-        <div class="description__text_audio"></div>
-        <!-- TODO: probably you can divide these two text-divs onto two items. -->
-      </div>
-    </div>
-  </section>
-  <app-workouts></app-workouts>
-  <section id="subscriptions">
+    </section>
+    <app-description></app-description>
+    <app-workouts></app-workouts>
     <app-subscription></app-subscription>
-  </section>
-  <app-coach></app-coach>
-  <section id="reviews">
-    <div class="container">
-      <h2>REVIEWS</h2>
-      <div class="reviews__subheader">THE VALUEABLE SECTION WHICH MAKES US BETTER EVERYDAY</div>
-    </div>
-  </section>
-  <section id="footer">
-    <div class="container">
-
-    </div>
-  </section>
-</body>
-</html>
+    <app-coach></app-coach>
+    <app-footer></app-footer>
+  </body>
+  </html>

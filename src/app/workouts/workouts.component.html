@@ -8,18 +8,20 @@
 <body>
   <section id="workouts">
     <div class="container">
+      <div class="workouts__wrapper">
       <div *ngIf="workouts.length > 0; else noWorkouts">
-        <div *ngFor="let workout of workouts">
-          <h2>{{ workout.workout_name }}</h2>
-          <h2>{{ workout.description }}</h2>
-          <h2>{{ workout.duration }}</h2>
-          <h2>{{ workout.duration }}</h2>
-          <img [src]="workout.img_src" alt="Workout Image">
+        <h2 class="workouts__plans">НАШІ ТРЕНУВАННЯ</h2>
+        <div *ngFor="let workout of workouts" class="workout__item">
+          <div class="text-section">
+          <p class="workout_name">{{ workout.workout_name }}</p>
+          <p class="workout_desc">{{ workout.description }}</p>
+        </div>
+          <img [src]="workout.img_src" alt="Workout Image" class="workout_img">
         </div>
       </div>
-
+    </div>
       <ng-template #noWorkouts>
-        <p>No subscriptions available.</p>
+        <p>На жаль зараз тренування відсутні.</p>
       </ng-template>
     </div>
   </section>

@@ -15,7 +15,7 @@
                   <option *ngFor="let sub of subscriptions" [value]="sub.id_subscription_type">{{sub.type_name}}</option>
               </select>
           </label>
-          <button class="btn btn-primary" (click)="open(content)">Submit</button>
+          <button class="btn btn-primary" (click)="open(content)">Відправити</button>
       </form>
         <ng-template #noSubscriptions>
           <p>No subscriptions available.</p>
@@ -24,19 +24,19 @@
     <div class="modal">
       <ng-template #content let-modal>
         <div class="modal-header">
-          <h4 class="modal-title" id="modal-basic-title">Confirm Subscription</h4>
+          <h4 class="modal-title" id="modal-basic-title">Підтвердити</h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p>Subscription Unique Number: {{subscriptionForm.get('subscription_type_id')?.value}}</p>
-          <p>Subscription Type: {{subscription.type_name}}</p>
-          <p>Subscription Price: {{subscription.price}}</p>
+          <p>Номер абонемента: {{subscriptionForm.get('subscription_type_id')?.value}}</p>
+          <p>Тип абонемента: {{subscription.type_name}}</p>
+          <p>Ціна: {{subscription.price}}</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cancel click')">Cancel</button>
-          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Save</button>
+          <button type="button" class="btn btn-outline-dark" (click)="modal.dismiss('Cancel click')">Закрити</button>
+          <button type="button" class="btn btn-danger" (click)="modal.close('Save click')">Зберегти</button>
         </div>
       </ng-template>
     </div>

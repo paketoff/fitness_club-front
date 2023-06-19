@@ -9,13 +9,15 @@
   <section id="coaches">
     <div class="container">
       <h2>НАШИ ТРЕНЕРА</h2>
-      <div *ngIf="coaches.length > 0; else noCoaches">
-        <div *ngFor="let coach of coaches">
-          <h2>{{ coach.name }}</h2>
-          <h2>{{coach.surname}}</h2>
-          <h2>{{coach.rating}}</h2>
-          <h2>{{coach.train_price}}</h2>
-          <img [src]="coach.img_url" alt="Coach image">
+      <div class="coaches__wrapper" *ngIf="coaches.length > 0; else noCoaches">
+        <div *ngFor="let coach of coaches" class="coach__item">
+          <img class="coach__image" [src]="coach.img_url" alt="Coach image">
+          <div class="coach__info">
+            <h2>{{ coach.name }} {{coach.surname}}</h2>
+            <h3>Рейтинг: {{coach.rating}}</h3>
+            <h3>Стоимость тренировки: {{coach.train_price}} UAH</h3>
+            <button routerLink="">ЗАПИСАТИСЬ</button>
+          </div>
         </div>
       </div>
       

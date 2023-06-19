@@ -36,8 +36,8 @@ export class AdminService {
     return this.http.get<any>(`${this.apiUrl}/users/${id}`, { headers: this.headers});
   }
 
-  updateUserById(id: number): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/users/${id}`, { headers: this.headers});
+  updateUserById(id: number, updatedData: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/users/${id}`, updatedData, { headers: this.headers});
   }
 
   deleteUserById(id: number): Observable<any> {

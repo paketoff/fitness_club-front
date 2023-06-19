@@ -19,6 +19,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SubscriptionOrderModule } from './subscription-order/subscription-order.module';
 import { CoachProfileComponent } from './coach-profile/coach-profile.component';
 import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
+import { AuthService } from './auth/auth.service';
+import { DescriptionComponent } from './home/description/description.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,8 @@ import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
     TrainingBookingComponent,
     CoachProfileComponent,
     LoginCoachComponent,
+    DescriptionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,7 @@ import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    SubscriptionOrderModule
+    SubscriptionOrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

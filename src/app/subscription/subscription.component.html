@@ -8,18 +8,32 @@
 <body>
   <section id="subscriptions">
     <div class="container">
-      <div *ngIf="subscriptions.length > 0; else noSubscriptions">
-        <div *ngFor="let sub of subscriptions">
-          <h2>{{ sub.type_name }}</h2>
-          <h2>{{ sub.price }}</h2>
-          <h2>{{ sub.description }}</h2>
-        </div>
+      <div class="header">
+        <h1>НАШІ АБОНЕМЕНТИ</h1>
+        <p>Оберіть абонемент який більш усього вам підходить.</p>
       </div>
-
-      <ng-template #noSubscriptions>
-        <p>No subscriptions available.</p>
-      </ng-template>
+  
+      <div class="subscriptions__wrapper">
+        <ng-container *ngIf="subscriptions.length > 0; else noSubscriptions">
+          <div *ngFor="let sub of subscriptions" class="subscription__item">
+            <div class="subscription__content">
+              <h2>{{ sub.type_name }}</h2>
+              <h3>{{ sub.price }} UAH</h3>
+              <h4>{{ sub.description }}</h4>
+              <button routerLink="">ОТРИМАТИ</button>
+            </div>
+          </div>
+        </ng-container>
+  
+        <ng-template #noSubscriptions>
+          <p>На жаль зараз абонементи відсутні.</p>
+        </ng-template>
+      </div>
+      <div class="survey-form">
+        <h4>Не можете вибрати підписку? Спробуйте пройти опитування!</h4>
+        <button routerLink="/survey">Рекомендаційне опитування</button>
+      </div>
     </div>
-  </section>
+  </section>  
 </body>
 </html>

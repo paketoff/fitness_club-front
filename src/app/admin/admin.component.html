@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section id="admin__panel">
+    <div class="container">
+      <div class="admin-panel">
+        <!-- Navigation for sections -->
+        <div class="navigation">
+          <button (click)="showSection('users')">Users</button>
+          <button (click)="showSection('coaches')">Coaches</button>
+          <button (click)="showSection('subscriptions')">Subscriptions</button>
+        </div>
+      
+        <div *ngIf="showUsers">
+          <h2>Users</h2>
+          <div *ngFor="let user of users">
+            <div>
+              <span>{{user.name}} {{user.surname}}</span>
+              <button (click)="selectedId = user.id; getUserById()">View</button>
+              <button (click)="selectedId = user.id; deleteUserById()">Delete</button>
+            </div>
+          </div>
+          <!-- <form [formGroup]="userProfileForm" (ngSubmit)="onUserSubmit()" *ngIf="userEntity">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" />
+            <button type="submit">Update User</button>
+          </form> -->
+        </div>
+      
+        <div *ngIf="showCoaches">
+          <h2>Coaches</h2>
+          <div *ngFor="let coach of coaches">
+            <div>
+              <span>{{coach.name}} {{coach.surname}}</span>
+              <button (click)="selectedId = coach.id; getCoachById()">View</button>
+              <button (click)="selectedId = coach.id; deleteCoachById()">Delete</button>
+            </div>
+          </div>
+          <!-- <form [formGroup]="coachProfileForm" (ngSubmit)="onCoachSubmit()" *ngIf="coachEntity">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" />
+            <button type="submit">Update Coach</button>
+          </form> -->
+        </div>
+      
+        <div *ngIf="showSubscriptions">
+          <h2>Subscriptions</h2>
+          <div *ngFor="let subscription of subscriptions">
+            <div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

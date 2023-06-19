@@ -1,0 +1,38 @@
+footer {
+  background-color: #F4EEEE;
+  padding: 20px 0;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1300px; // зависит от ваших потребностей
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .footer-links {
+      display: flex;
+      gap: 15px; // пространство между ссылками
+
+      a {
+        text-decoration: none;
+        color: #000;
+        font-size: 18px;
+      }
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 15px;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

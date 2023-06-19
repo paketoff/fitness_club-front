@@ -10,6 +10,8 @@ import { TrainingBookingComponent } from './training-booking/training-booking.co
 import { SubscriptionOrderComponent } from './subscription-order/subscription-order.component';
 import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
 import { CoachProfileComponent } from './coach-profile/coach-profile.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminGuard } from './admin/admin.guard';
 
 const routes: Routes = [
   {path: 'home', component: MainPageComponent},
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path: 'coach-schedule/get-all-schedules', component: CoachScheduleComponent},
   {path: 'training-booking/:scheduleId', component: TrainingBookingComponent},
   {path: 'order-subscription', component: SubscriptionOrderComponent},
+  {path: 'admin-panel', component: AdminComponent},
 ];
 
 @NgModule({

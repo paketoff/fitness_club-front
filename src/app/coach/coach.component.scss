@@ -1,0 +1,59 @@
+#coaches {
+  background-color: #F4EEEE; // задаем цвет фона
+
+  .container {
+    text-align: center;
+
+    h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      padding-top: 40px;
+    }
+
+    .coaches__wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      .coach__item {
+        width: 100%;
+        max-width: 300px;
+        margin: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // добавляем немного тени
+
+        .coach__image {
+          width: 100%;
+          height: auto;
+          object-fit: cover; // сохраняем пропорции изображения
+        }
+
+        .coach__info {
+          background-color: #f4f4f4; // задаем цвет фона для информации о тренере
+          padding: 10px;
+
+          h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+          }
+
+          h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+          }
+          button {
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+}

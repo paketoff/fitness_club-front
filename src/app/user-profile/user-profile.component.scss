@@ -1,0 +1,187 @@
+#user_profile {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      label {
+        font-size: 18px;
+        color: #000000;
+        margin-bottom: 5px;
+        display: flex;
+        flex-direction: column;
+
+        input {
+          border: none;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #000000;
+          margin-top: 10px;
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-top: 10px;
+        }
+      }
+
+      button {
+        background-color: #000000;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-top: 20px;
+
+        &:hover {
+          background-color: #FFFFFF;
+          color: #000000;
+          border: 1px solid #000000;
+        }
+      }
+    }
+
+    .subscription_info, .workouts_info__form {
+      border-top: 1px solid #000000;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .subscription_info__form, .workouts_info__form {
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 1px solid #000000;
+        padding: 20px;
+        border-radius: 10px;
+        margin: 10px 0;
+      }
+    }
+
+    .pagination-controls__buttons {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+  }
+  .profile-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2em;
+
+    .profile-data, .profile-img-edit {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.5em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+    }
+
+    .profile-img-edit {
+      display: flex;
+      flex-direction: row; /* Выстраивает элементы вдоль оси строки */
+      align-items: center; /* Центрирует элементы по вертикали */
+      gap: 10px; /* Определяет расстояние между элементами */
+
+      .edit-button, .update-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+
+        &.edit-button {
+          background-color: #007bff;
+        }
+
+        &.update-button {
+          background-color: #28a745;
+        }
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+
+  .subscription_info__form, .workouts_info__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    div {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 1em;
+      background-color: #fff;
+      box-shadow: 0px 1px 3px rgba(0,0,0,0.2);
+
+      label {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+      }
+
+      input {
+        width: 100%;
+        padding: 0.5em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+
+  .pagination-controls__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+#subscription_order {
+  .container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .sub_order__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  
+    form {
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+  
+      select {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #e0e0e0;
+        font-size: 16px;
+      }
+  
+      .btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #008CBA;
+        color: white;
+        cursor: pointer;
+        align-self: center;
+        width: 100%;
+  
+        &:hover {
+          background-color: #007B9A;
+        }
+      }
+    }
+  }
+  
+  .modal {
+    .modal-header,
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .modal-title {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  
+    .modal-body {
+      padding: 10px;
+  
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  
+      &.btn-outline-dark {
+        border: 1px solid #333;
+        background-color: transparent;
+        color: #333;
+  
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+  
+      &.btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+  
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+  }
+}

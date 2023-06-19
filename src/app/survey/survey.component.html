@@ -17,14 +17,17 @@
         <button type="button" (click)="prevQuestion()">У початок</button>
         <button type="button" (click)="nextQuestion()">Вперёд</button>
     </form>
-  </div>
 
-  <div *ngIf="recommendedSubscription">
-    Рекомендованная подписка: {{recommendedSubscription.type_name}}
-  </div>
-  <br>
-  <div *ngIf="recommendedCoaches">
-    Рекомендованные тренера: {{recommendedCoaches.name}}, {{recommendedCoaches.surname}}, {{recommendedCoaches.rating}}
-  </div>
+    <div *ngIf="recommendedSubscription" class="recommendation">
+      Рекомендований вид абонемента: {{recommendedSubscription.type_name}}
+      <a href="/subscription-purchase" class="button">Купить абонемент</a>
+    </div>
+  
+    <div *ngIf="recommendedCoaches" class="recommendation">
+      Рекомендовані тренера: {{recommendedCoaches.name}}, {{recommendedCoaches.surname}}, {{recommendedCoaches.rating}}
+      <a href="/coach-selection" class="button">Выбрать тренера</a>
+    </div>
+</div>
+
 </body>
 </html>

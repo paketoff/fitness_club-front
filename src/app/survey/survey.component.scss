@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.survey-container {
+  background: #eee;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 350px;
+  text-align: center;
+}
+
+.survey-container h2 {
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.survey-container .options-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.survey-container .options-container label {
+  display: flex;
+  align-items: center;
+  color: #333;
+  cursor: pointer;
+  padding: 10px 0;
+  flex-basis: calc(50% - 10px); 
+}
+
+.survey-container button {
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.survey-container button:hover {
+  background-color: #303f9f;
+}
+
+.survey-container .recommendation {
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.survey-container .recommendation h3 {
+  color: #3f51b5;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.survey-container .recommendation p {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.survey-container .recommendation button {
+  background-color: #000;
+  color: #fff;
+  margin-top: 10px;
+}

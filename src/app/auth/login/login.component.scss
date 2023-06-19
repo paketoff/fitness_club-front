@@ -1,0 +1,52 @@
+#login{
+  background-color: #F4EEEE;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 100px 0;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px; // добавляет промежуток между полями формы
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        label {
+          font-size: 18px;
+          color: #000000;
+          margin-bottom: 5px;
+        }
+
+        input {
+          border: none;
+          padding: 10px;
+          border-radius: 5px;
+          font-size: 16px;
+          color: #000000;
+        }
+      }
+
+      button {
+        background-color: #000000;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: #FFFFFF;
+          color: #000000;
+          border: 1px solid #000000;
+        }
+      }
+    }
+  }
+}
