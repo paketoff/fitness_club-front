@@ -38,14 +38,32 @@
       }
 
       .profile-img-edit {
-        position: relative;
         display: flex;
         justify-content: space-between;
+        align-items: center;
+      }
+
+      .profile-img-edit input {
+        width: 70%;
+        border: 1px solid #888;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 16px;
       }
       
       .avatar-block {
-        flex-grow: 1;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
       }
+      
+      .avatar-block img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
       .edit-button, .home_btn {
         margin-top: 10px; /* отступ сверху */
         background-color: #b7b9bb; /* ваш текущий фоновый цвет */

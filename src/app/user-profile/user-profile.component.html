@@ -30,18 +30,18 @@
         </label>
 
         <div class="profile-img-edit">
-          <label>
+          <label for="avatar-input">
             Avatar:
-            
-              <input type="text" formControlName="img_src">
-            <div class="avatar-block">
+          </label>
+          <input id="avatar-input" type="text" formControlName="img_src">
+          <div class="avatar-block">
             <img [src]="profileForm.controls['img_src'].value" alt="Avatar" *ngIf="profileForm.controls['img_src'].value">
           </div>
-          </label>
+        </div>
       
           <button type="submit" *ngIf="isEditing" class="update-button">Оновити профиль</button>
-        </div>
-        <button (click)="startEditing()" *ngIf="!isEditing" class="edit-button">Оновити</button>
+        <button (click)="startEditing()" *ngIf="!isEditing" class="edit-button">Оновити</button> <br>
+        <button routerLink="/home" class="home-button">На головну</button>
 
       </form>
 

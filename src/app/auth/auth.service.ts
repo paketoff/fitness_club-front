@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class AuthService {
 
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private router: Router) { }
 
   private jwtHelper = new JwtHelperService();
 
@@ -44,6 +47,9 @@ export class AuthService {
 
   logoutUser(): void {
     localStorage.removeItem('access_token');
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+      this.router.navigate(['/home']); // or you can use navigateByUrl('/Your URL')
+    }); 
   }
 
   getToken(): string | null {

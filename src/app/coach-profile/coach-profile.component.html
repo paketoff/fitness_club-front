@@ -57,12 +57,14 @@
                             <label>is booked?:
                                 <input type="checkbox" formControlName="isBooked">
                             </label>
-                            <button type="button" (click)="updateSchedule(i)">Update Schedule</button>
+                            <button type="button" (click)="updateSchedule(i)">Оновити</button>
                         </div>
                     </div>
                 </form>
-                <button type="button" (click)="addSchedule()">Add Schedule</button>
-                <button type="button" (click)="submitSchedules()">Submit Schedules</button>
+                <button type="button" class="add_schedule_btn" (click)="addSchedule()">Додати розпис</button> <br>
+                <button type="button" class="submit_btn" (click)="submitSchedules()">Підтвердити</button> <br>
+                <button class="home_btn" routerLink="/home">На головну</button>
+
             </div>
         </section>
     </body>

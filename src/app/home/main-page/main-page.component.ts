@@ -7,10 +7,16 @@ import { AuthService } from 'src/app/auth/auth.service';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  currentUser: any = null;
 
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+    const token = this.authService.getToken();
+    if (token) {
+      this.currentUser = this.authService.decodeToken(token);
+    }
+    this.setupSmoothScroll();
   }
 
   private setupSmoothScroll(): void {
@@ -29,5 +35,4 @@ export class MainPageComponent implements OnInit {
       });
     });
   }
-
 }
