@@ -38,15 +38,29 @@
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
-        background-color: #008CBA;
+        background-color: #252525;
         color: white;
         cursor: pointer;
         align-self: center;
         width: 100%;
+      }
+    }
+  }
   
-        &:hover {
-          background-color: #007B9A;
-        }
+  .warning {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: justify;
+  
+    p {
+      margin-bottom: 10px;
+  
+      a {
+        color: #252525;
+        text-decoration: underline;
       }
     }
   }

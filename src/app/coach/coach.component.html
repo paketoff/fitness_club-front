@@ -11,12 +11,15 @@
       <h2>НАШИ ТРЕНЕРА</h2>
       <div class="coaches__wrapper" *ngIf="coaches.length > 0; else noCoaches">
         <div *ngFor="let coach of coaches" class="coach__item">
-          <img class="coach__image" [src]="coach.img_url" alt="Coach image">
+          <div class="coach__image-container">
+            <img class="coach__image" [src]="coach.img_url" alt="Coach image">
+          </div>
           <div class="coach__info">
             <h2>{{ coach.name }} {{coach.surname}}</h2>
             <h3>Рейтинг: {{coach.rating}}</h3>
-            <h3>Стоимость тренировки: {{coach.train_price}} UAH</h3>
-            <button routerLink="">ЗАПИСАТИСЬ</button>
+            <h3>Вартість тренування: {{coach.train_price}} UAH</h3>
+            
+            <button routerLink="/coach-schedule/get-all-schedules">ЗАПИСАТИСЬ</button>
           </div>
         </div>
       </div>

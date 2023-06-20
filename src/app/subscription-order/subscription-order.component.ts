@@ -62,6 +62,7 @@
           if (result === 'Save click') {
             this.saveSubscription();
           }
+          this.router.navigate(['/home']);
       }, (reason) => {
           // handle dismiss, if needed
       });

@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -10,10 +10,15 @@
     <section id="landing">
       <div class="container">
         <div class="header">
-          <a href="#workouts">ТРЕНУВАННЯ</a>
-          <a href="#subscriptions">АБОНЕМЕНТИ</a>
-          <a href="#coaches">ТРЕНЕРА</a>
-          <a routerLink="/userProfile">ПРОФІЛЬ</a>
+          <a href="home/#workouts">ТРЕНУВАННЯ</a>
+          <a href="home/#subscriptions">АБОНЕМЕНТИ</a>
+          <a href="home/#coaches">ТРЕНЕРА</a>
+          <a routerLink="/registerUser">РЕЄСТРАЦІЯ</a>
+          <a routerLink="/login">УВІЙТИ</a>
+          <a routerLink="/loginCoach">УВІЙТИ ЯК ТРЕНЕР</a>
+          <ng-template #showRegisterLogin>
+            
+          </ng-template>
         </div>
         <div class="landing__wrapper">
           <h1 class="landing__header">The<br> Body<br> Club</h1>
@@ -22,14 +27,16 @@
             THE LOVE IT<br>
             DESERVES.
           </h2>
+          <a href="home/#subscriptions">
           <button class="landing__subscription">ПРИДБАТИ</button>
-        </div>
+          </a>
+          </div>
       </div>
     </section>
     <app-description></app-description>
     <app-workouts></app-workouts>
     <app-subscription></app-subscription>
     <app-coach></app-coach>
-    <app-footer></app-footer>
+    <!-- <app-footer></app-footer> -->
   </body>
   </html>

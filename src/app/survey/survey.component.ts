@@ -197,7 +197,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_F_P) {
             if(selectedAnswerId === ans.A_PREF_MORNING_F_P || selectedAnswerId === ans.A_PREF_AFTERNOON_F_P) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
@@ -205,7 +205,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_M_P) {
             if(selectedAnswerId === ans.A_PREF_MORNING_M_P || selectedAnswerId === ans.A_PREF_AFTERNOON_M_P) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
@@ -213,7 +213,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_N_P) {
             if(selectedAnswerId === ans.A_PREF_MORNING_N_P || selectedAnswerId === ans.A_PREF_AFTERNOON_N_P) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
@@ -221,7 +221,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_F_G) {
             if(selectedAnswerId === ans.A_PREF_MORNING_F_G || selectedAnswerId === ans.A_PREF_AFTERNOON_F_G) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
@@ -229,7 +229,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_M_G) {
             if(selectedAnswerId === ans.A_PREF_MORNING_M_G || selectedAnswerId === ans.A_PREF_AFTERNOON_M_G) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }
@@ -237,7 +237,7 @@ export class SurveyComponent implements OnInit {
 
           else if(this.currentIndex === q.Q_TRAINING_TIME_N_G) {
             if(selectedAnswerId === ans.A_PREF_MORNING_N_G || selectedAnswerId === ans.A_PREF_AFTERNOON_N_G) {
-              this.recommendedCoaches = this.selectedCoaches;
+              this.recommendedCoaches = this.selectedCoaches[0];
               this.currentQuestion = this.questions[this.currentIndex];
               this.surveyForm.reset();
             }

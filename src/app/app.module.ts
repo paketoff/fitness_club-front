@@ -22,13 +22,12 @@ import { LoginCoachComponent } from './auth/login-coach/login-coach.component';
 import { AuthService } from './auth/auth.service';
 import { DescriptionComponent } from './home/description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     SurveyComponent,
-    RegisterComponent,
-    LoginComponent,
     SubscriptionComponent,
     CoachComponent,
     MainPageComponent,
@@ -39,7 +38,8 @@ import { FooterComponent } from './home/footer/footer.component';
     CoachProfileComponent,
     LoginCoachComponent,
     DescriptionComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,

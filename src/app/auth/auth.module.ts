@@ -12,7 +12,6 @@ import { LoginCoachComponent } from './login-coach/login-coach.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    LoginCoachComponent,
     RegisterCoachComponent
   ],
   imports: [

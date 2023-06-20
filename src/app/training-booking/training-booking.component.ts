@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrainingBookingService } from './training-booking.service';
 
 
@@ -18,6 +18,7 @@ export class TrainingBookingComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private trainingBookingService: TrainingBookingService,
+    private router: Router,
     ) { 
       this.bookForm = new FormGroup({
         date: new FormControl(''),
@@ -29,7 +30,7 @@ export class TrainingBookingComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      const scheduleId = this.route.snapshot.paramMap.get('scheduleId');
+      const scheduleId = this.route.snapshot.paramMap.get('id');
       if (scheduleId !== null) {
         const scheduleIdNumber = Number(scheduleId);
         this.trainingBookingService.getScheduleById(scheduleIdNumber).subscribe(data => {
@@ -48,11 +49,12 @@ export class TrainingBookingComponent implements OnInit {
 
   submit(): void {
     //get scheduleId from the URL;
-    const scheduleId = this.route.snapshot.paramMap.get('scheduleId');
+    const scheduleId = this.route.snapshot.paramMap.get('id');
 
     if (scheduleId !== null) {
       this.trainingBookingService.bookTraining(Number(scheduleId), this.bookForm.value).subscribe(() => {
         console.log('Training booked successfully');
+        this.router.navigate(['/home']);
       })
     } else {
       console.error('ScheduleId is null');

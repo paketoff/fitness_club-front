@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'userProfile', component: UserProfileComponent},
   {path: 'coachProfile', component: CoachProfileComponent},
   {path: 'coach-schedule/get-all-schedules', component: CoachScheduleComponent},
-  {path: 'training-booking/:scheduleId', component: TrainingBookingComponent},
+  {path: 'training-booking/:id', component: TrainingBookingComponent},
   {path: 'order-subscription', component: SubscriptionOrderComponent},
   {path: 'admin-panel', component: AdminComponent},
 ];

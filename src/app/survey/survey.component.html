@@ -15,17 +15,17 @@
             <label>{{ answer.answer_text }}</label> 
         </div>
         <button type="button" (click)="prevQuestion()">У початок</button>
-        <button type="button" (click)="nextQuestion()">Вперёд</button>
+        <button type="button" (click)="nextQuestion()">Вперед</button>
     </form>
 
     <div *ngIf="recommendedSubscription" class="recommendation">
       Рекомендований вид абонемента: {{recommendedSubscription.type_name}}
-      <a href="/subscription-purchase" class="button">Купить абонемент</a>
+      <a href="/order-subscription" class="button">Придбати</a>
     </div>
   
     <div *ngIf="recommendedCoaches" class="recommendation">
-      Рекомендовані тренера: {{recommendedCoaches.name}}, {{recommendedCoaches.surname}}, {{recommendedCoaches.rating}}
-      <a href="/coach-selection" class="button">Выбрать тренера</a>
+      Рекомендовані тренера: {{recommendedCoaches.name}} {{recommendedCoaches.surname}} 
+      <a href="/coach-schedule/get-all-schedules" class="button">Обрати тренера</a>
     </div>
 </div>
 

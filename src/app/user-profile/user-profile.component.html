@@ -32,13 +32,17 @@
         <div class="profile-img-edit">
           <label>
             Avatar:
-            <input type="text" formControlName="img_src">
+            
+              <input type="text" formControlName="img_src">
+            <div class="avatar-block">
             <img [src]="profileForm.controls['img_src'].value" alt="Avatar" *ngIf="profileForm.controls['img_src'].value">
+          </div>
           </label>
       
-          <button (click)="startEditing()" *ngIf="!isEditing" class="edit-button">Изменить</button>
-          <button type="submit" *ngIf="isEditing" class="update-button">Обновить профиль</button>
+          <button type="submit" *ngIf="isEditing" class="update-button">Оновити профиль</button>
         </div>
+        <button (click)="startEditing()" *ngIf="!isEditing" class="edit-button">Оновити</button>
+
       </form>
 
       <h3 class="subscription_info"> YOUR SUBSCRIPTION INFO: </h3>

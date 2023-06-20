@@ -7,6 +7,10 @@ import { CoachModule } from '../coach/coach.module';
 import { WorkoutsModule } from '../workouts/workouts.module';
 import { DescriptionComponent } from './description/description.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { AuthModule } from '../auth/auth.module';
+import { LoginComponent } from '../auth/login/login.component';
+import { LoginCoachComponent } from '../auth/login-coach/login-coach.component';
+import { RegisterComponent } from '../auth/register/register.component';
 
 
 
