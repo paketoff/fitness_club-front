@@ -104,6 +104,7 @@ export class UserProfileComponent implements OnInit {
       end_period: [{value: subscription.end_period, disabled: true}],
       trains_count: [{value: subscription.trains_count, disabled: true}],
       price: [{value: subscription.price, disabled: true}],
+      status: [{value: subscription.subscriptionStatus.status_name, disabled:true}]
     });
   }
 

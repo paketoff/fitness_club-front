@@ -50,23 +50,28 @@
         <div formArrayName="subscriptions" class="subscription_info__form">
           <div *ngFor="let subscriptionForm of subscriptionInfoForms.controls; let i = index" [formGroupName]="i">
             <label>
-              Your Price:
+              Ваша ціна:
               <input type="number" formControlName="price"> 
             </label>
 
             <label>
-              Your Start Period:
+              Дата активації:
               <input type="date" formControlName="start_period"> 
             </label>
 
             <label>
-              Your End Period:
+              Закінчення терміну:
               <input type="date" formControlName="end_period">
             </label>
 
             <label>
-              Your Trains Count:
+              Кількість тренуваннь:
               <input type="number" formControlName="trains_count">
+            </label>
+
+            <label>
+              Статус підписки:
+              <input type="text" formControlName="status">
             </label>
 
             
