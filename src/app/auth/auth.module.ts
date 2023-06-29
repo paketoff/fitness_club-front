@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterCoachComponent } from './register-coach/register-coach.component';
 import { LoginCoachComponent } from './login-coach/login-coach.component';
+import { HeaderComponent } from '../home/header/header.component';
 
 
 
@@ -12,7 +13,7 @@ import { LoginCoachComponent } from './login-coach/login-coach.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    RegisterCoachComponent
+    RegisterCoachComponent,
   ],
   imports: [
     CommonModule,

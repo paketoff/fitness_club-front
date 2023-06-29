@@ -7,7 +7,6 @@
 </head>
 <body>
   <section id="workouts">
-    <div class="container">
       <div class="workouts__wrapper">
       <div *ngIf="workouts.length > 0; else noWorkouts">
         <h2 class="workouts__plans">НАШІ ТРЕНУВАННЯ</h2>
@@ -23,7 +22,6 @@
       <ng-template #noWorkouts>
         <p>На жаль зараз тренування відсутні.</p>
       </ng-template>
-    </div>
   </section>
 </body>
 </html>

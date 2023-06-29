@@ -1,0 +1,41 @@
+.header{
+  padding: 70px 0;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav {
+    align-items: center;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      list-style-type: none;
+    }
+
+    &__item {
+      margin-right: 120px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      color: #000;
+      text-align: justify;
+      line-height: normal;
+
+      &--highlight {
+        border-radius: 10px;
+        border: 1px solid #000;
+        background: #FFF;
+      }
+    }
+  }
+}

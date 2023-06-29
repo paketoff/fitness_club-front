@@ -1,26 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 
-.container {
-  max-width: 1728px;
-  margin: 0 auto;
-}
-
-body {
+.page__body {
   background-color: #F4EEEE;
 }
 
-.home-button {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  font-size: 14px;
-  background-color: #272727; /* синий */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  
-  &:hover {
-    background-color: #2b2c2c;
-  }
+.container {
+  display: grid;
+  width: 1528px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
 }
+
+
+

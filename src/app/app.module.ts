@@ -23,6 +23,7 @@ import { AuthService } from './auth/auth.service';
 import { DescriptionComponent } from './home/description/description.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { AuthModule } from './auth/auth.module';
+import { HeaderComponent } from './home/header/header.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { AuthModule } from './auth/auth.module';
     LoginCoachComponent,
     DescriptionComponent,
     FooterComponent,
-    
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

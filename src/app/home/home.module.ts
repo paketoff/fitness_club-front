@@ -11,6 +11,7 @@ import { AuthModule } from '../auth/auth.module';
 import { LoginComponent } from '../auth/login/login.component';
 import { LoginCoachComponent } from '../auth/login-coach/login-coach.component';
 import { RegisterComponent } from '../auth/register/register.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -20,6 +21,7 @@ import { RegisterComponent } from '../auth/register/register.component';
     FooterComponent,
     DescriptionComponent,
     ReviewsComponent,
+    HeaderComponent,
   ],
   imports: [
     CommonModule,

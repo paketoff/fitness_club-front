@@ -12,10 +12,6 @@ export class MainPageComponent implements OnInit {
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
-    const token = this.authService.getToken();
-    if (token) {
-      this.currentUser = this.authService.decodeToken(token);
-    }
     this.setupSmoothScroll();
   }
 

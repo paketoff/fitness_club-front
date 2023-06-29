@@ -6,43 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fitness-Club</title>
   </head>
-  <body>
-    <section id="landing">
-      <div class="container">
-        <div class="header">
-          <a href="home/#workouts">ТРЕНУВАННЯ</a>
-          <a href="home/#subscriptions">АБОНЕМЕНТИ</a>
-          <a href="home/#coaches">ТРЕНЕРА</a>
-          <div *ngIf="!currentUser">
-            <a routerLink="/registerUser">РЕЄСТРАЦІЯ</a>
-            <a routerLink="/login">УВІЙТИ</a>
-            <a routerLink="/login-coach">УВІЙТИ ЯК ТРЕНЕР</a>
+  <body class="page__body">
+    <div class="container">
+      <main class="main">
+        <app-header></app-header>
+        <section class="landing">
+          <div class="landing__wrapper">
+            <h1 class="landing__header">The<br> Body<br> Club</h1>
+            <h2 class="landing__subheader">
+              GIVE YOUR BODY<br>
+              THE LOVE IT<br>
+              DESERVES.
+            </h2>
+            <a href="home/#subscriptions">
+            <button class="button button-primary">ПРИДБАТИ</button>
+            </a>
           </div>
-          <div *ngIf="currentUser && currentUser.role_name === 'user'">
-            <a routerLink="/userProfile">Профіль Користувача</a>
-            <a routerLink="/home" (click)="authService.logoutUser()">Вийти</a>
-          </div>
-          <div *ngIf="currentUser && currentUser.role_name === 'coach'">
-            <a routerLink="/coachProfile">Профіль Тренера</a>
-            <a routerLink="/home" (click)="authService.logoutUser()">Вийти</a>
-          </div>
-        </div>
-        <div class="landing__wrapper">
-          <h1 class="landing__header">The<br> Body<br> Club</h1>
-          <h2 class="landing__subheader">
-            GIVE YOUR BODY<br>
-            THE LOVE IT<br>
-            DESERVES.
-          </h2>
-          <a href="home/#subscriptions">
-          <button class="landing__subscription">ПРИДБАТИ</button>
-          </a>
-        </div>
-      </div>
-    </section>
-    <app-description></app-description>
-    <app-workouts></app-workouts>
-    <app-subscription></app-subscription>
-    <app-coach></app-coach>
+        </section>
+        <app-description></app-description>
+        <app-workouts></app-workouts>
+        <app-subscription></app-subscription>
+        <app-coach></app-coach>
+      </main>
+    </div>
   </body>
 </html>
