@@ -6,20 +6,20 @@
   <title>Document</title>
 </head>
   <header class="header">
-    <div class="container flex header__container">
+    <div class="flex header__container">
       <nav class="nav flex">
         <ul class="nav__list flex">
           <li class="nav__item"><a href="home/#workouts">ТРЕНУВАННЯ</a></li>
           <li class="nav__item"><a href="home/#subscriptions">АБОНЕМЕНТИ</a></li>
           <li class="nav__item"><a href="home/#coaches">ТРЕНЕРА</a></li>
-          <li *ngIf="!currentUser" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/register">РЕЄСТРАЦІЯ</a></li>
-          <li *ngIf="!currentUser" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/login">УВІЙТИ</a></li>
-          <li *ngIf="!currentUser" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/login-coach">УВІЙТИ ЯК ТРЕНЕР</a></li>
+          <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/register">РЕЄСТРАЦІЯ</a></li>
+          <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/login">УВІЙТИ</a></li>
+          <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/login-coach">УВІЙТИ ЯК ТРЕНЕР</a></li>
           
-          <li *ngIf="currentUser && currentUser.role_name === 'user'" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/userProfile">Профіль Користувача</a></li>
-          <li *ngIf="currentUser && currentUser.role_name === 'user'" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/home" (click)="authService.logoutUser()">Вийти</a></li>
-          <li *ngIf="currentUser && currentUser.role_name === 'coach'" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/coachProfile">Профіль Тренера</a></li>
-          <li *ngIf="currentUser && currentUser.role_name === 'coach'" class="nav__item"><a class="nav__link nav__link--highlight" routerLink="/home" (click)="authService.logoutUser()">Вийти</a></li>
+          <li *ngIf="currentUser && currentUser.role_name === 'user'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/userProfile">Профіль Користувача</a></li>
+          <li *ngIf="currentUser && currentUser.role_name === 'user'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/home" (click)="authService.logoutUser()">Вийти</a></li>
+          <li *ngIf="currentUser && currentUser.role_name === 'coach'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/coachProfile">Профіль Тренера</a></li>
+          <li *ngIf="currentUser && currentUser.role_name === 'coach'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/home" (click)="authService.logoutUser()">Вийти</a></li>
         </ul>
       </nav>
     </div>

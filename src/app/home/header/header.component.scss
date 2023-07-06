@@ -1,10 +1,17 @@
 .header{
-  padding: 70px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: 90px;
+
+  
 
   &__container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   .nav {
@@ -25,7 +32,7 @@
       }
     }
 
-    &__link {
+    &__item a {
       text-decoration: none;
       color: #000;
       text-align: justify;

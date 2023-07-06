@@ -1,7 +1,30 @@
 .landing {
+  position: relative;
   background-image: url('https://i.imgur.com/1o1vmiv.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  
+  height: 1167px;
+  max-height: 1167px;
+
+  &__header {
+    padding-top: 191px;
+    padding-left: 43px;
+    color: #000;
+    text-align: justify;
+    font-size: 64px;
+  }
+
+  &__subheader {
+    text-align: right;
+    padding-right: 43px;  
+
+    color: #000;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+
 }

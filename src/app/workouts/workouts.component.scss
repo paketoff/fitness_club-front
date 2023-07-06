@@ -1,0 +1,49 @@
+.workouts {
+
+  
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &__img_wrapper {
+    margin-left: -30px;
+    margin-right: -30px;
+  }
+
+  &__img {
+    width: 860px;
+    height: 720px;
+  }
+
+
+  &__text_wrapper {
+    color: #000;
+    max-width: 730px;
+    max-height: 400px;
+    text-align: justify;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+}
+
+// a loop in SCSS? wtf? The code below gives an order for the workout-items to render them like: 
+// if(workout-item % 2 === 0 (odd or not)) {first - text, second - img} else {reverse}; 
+@for $i from 1 through 6 {
+  .workouts__item:nth-child(#{$i}) {
+    .workouts__text_wrapper {
+      order: #{if($i % 2 == 1, 2, 1)};;
+    }
+
+    .workouts__img_wrapper {
+      order: #{if($i % 2 == 1, 1, 2)};
+    }
+  }
+}

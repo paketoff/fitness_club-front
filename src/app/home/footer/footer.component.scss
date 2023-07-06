@@ -1,0 +1,207 @@
+.footer {
+  background: #D9D9D9;
+  position: relative;
+
+  margin-top: 144px;
+  height: 750px;
+  max-height: 750px;
+
+  &__subwrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 124px;
+    height: 184px;
+    flex-shrink: 0;
+  }
+
+  &__subheader {
+    width: 213px;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: justify;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &__subheader_text {
+    width: 394px;
+    height: 106px;
+    flex-shrink: 0;
+    color: #000;
+    text-align: justify;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__header {
+    width: 124px;
+    height: 184px;
+    color: #000;
+    text-align: justify;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-left: 60px;
+    margin-top: 62px;
+  }
+
+  &__socials{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  &__links_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    top: 34px;
+    left: 616px;
+  }
+
+  &__links-f-h {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__links-s-h {
+    display: flex;
+    flex-direction: column;
+    margin-left: 310px;
+  }
+
+  &__links-f-h a,
+  &__links-s-h a {
+    color: #000;
+    text-align: justify;
+    font-size: 16px;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 108px;
+    margin-bottom: 10px; 
+  }
+
+  &__mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  &__social_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 93px;
+    margin-right: 97px;
+  }
+
+  &__social_links svg {
+    margin-left: 29px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__email_input {
+    width: 200px;
+    height: 69px;
+    background: #FFF;
+    border: none;
+    margin-top: 20px;
+  }
+
+  &__btn_email_text {
+    width: 88px;
+    height: 35px;
+    color: #FFF;
+    text-align: justify;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  &__mobile_apple-store {
+    display: flex;
+    flex-direction: row;
+    border-radius: 33px;
+    border: 6px solid #000;
+    width: 337px;
+    height: 97px;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 100px;
+  }
+
+  &__mobile_apple-store_text {
+    width: 204px;
+    height: 69px;
+  }
+
+  &__mobile_apple-store_text a {
+    color: #000;
+    text-align: justify;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+
+  &__mobile_apple-store-img svg {
+    width: 60px;
+    height: 62.755px;
+  }
+
+  &__mobile_play-store {
+    display: flex;
+    flex-direction: row;
+    margin-top: 108px;
+    width: 337px;
+    height: 95px;
+    border-radius: 33px;
+    border: 6px solid #000;
+    background: #D9D9D9;
+    margin-right: 100px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__mobile_play-store-img svg {
+    width: 45px;
+    height: 62.756px;
+  }
+
+  &__mobile_play-store_text a{
+    color: #000;
+    text-align: justify;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration: none;
+  }
+}
