@@ -6,22 +6,29 @@
   <title>Document</title>
 </head>
 <body>
-  <section id="coach_schedules">
+  <section id="schedules" class="schedules">
     <h2 class="schedules__header">Записи на тренування</h2>
-    <div class="container">
-      <div class="book_form">
-      <div class="schedule-item" *ngFor="let item of schedule">
-        <div class="schedule-details">
-          <p><strong>Дата та час зайняття:</strong> {{item.work_date }} - {{item.workPeriod_Start }} - {{item.workPeriod_End }}</p>
-          <p><strong>Додаткова інформація:</strong> {{item.additional_info}}</p>
-          <p><strong>Ім'я тренера:</strong> {{item.coach.name}}</p>
-          <p><strong>Прізвище тренера:</strong> {{item.coach.surname}}</p>
-        </div>
-        <button class="booking-button" routerLink="/training-booking/{{item.id_schedule}}">Забронювати</button>
+      <div class="schedules__filters">
+        <input class="schedules__input_f" type="date" [(ngModel)]="selectedDate" (change)="filterByDate()"/>
+        <input class="schedules__input_f" type="text" [(ngModel)]="filteredSurname" placeholder="Прізвище тренера..."/>
+        <button class="button_filter" (click)="filterBySurname()">Пошук</button>
       </div>
-    </div>
-    <button class="home-button" routerLink="/home">На головну</button>
+      
+      <div class="schedules__wrapper">
+        <button class="button button-filter" routerLink="/home" >На головну</button>
+        <div class="schedules__item" *ngFor="let item of filteredSchedule">
+          <div class="schedules__details">
+            <p><strong>Дата та час зайняття:</strong> {{item.work_date }} | {{item.workPeriod_Start }} - {{item.workPeriod_End }}</p>
+            <p><strong>Додаткова інформація:</strong> {{item.additional_info}}</p>
+            <p><strong>Ім'я тренера:</strong> {{item.coach.name}}</p>
+            <p><strong>Прізвище тренера:</strong> {{item.coach.surname}}</p>
+          </div>
+          <button class="button_booking" routerLink="/training-booking/{{item.id_schedule}}">Забронювати</button>
+        </div>
   </div>
+  <ng-template #noWorkouts class="workouts__none" style="display: flex; flex-direction: column; text-align: center;">
+    <p style="text-align: center; padding-top: 30px; font-size: 32px;">На жаль зараз тренування відсутні.</p>
+  </ng-template>
   </section>
 </body>
 </html>

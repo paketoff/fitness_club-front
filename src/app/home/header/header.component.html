@@ -6,15 +6,15 @@
   <title>Document</title>
 </head>
   <header class="header">
-    <div class="flex header__container">
-      <nav class="nav flex">
-        <ul class="nav__list flex">
+    <div class="container">
+      <nav class="nav">
+        <ul class="nav__list">
           <li class="nav__item"><a href="home/#workouts">ТРЕНУВАННЯ</a></li>
           <li class="nav__item"><a href="home/#subscriptions">АБОНЕМЕНТИ</a></li>
           <li class="nav__item"><a href="home/#coaches">ТРЕНЕРА</a></li>
           <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/register">РЕЄСТРАЦІЯ</a></li>
           <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/login">УВІЙТИ</a></li>
-          <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/login-coach">УВІЙТИ ЯК ТРЕНЕР</a></li>
+          <li *ngIf="!currentUser" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/login-coach">ТРЕНЕРУ</a></li>
           
           <li *ngIf="currentUser && currentUser.role_name === 'user'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/userProfile">Профіль Користувача</a></li>
           <li *ngIf="currentUser && currentUser.role_name === 'user'" class="button nav__item"><a class="nav__link nav__link--highlight" routerLink="/home" (click)="authService.logoutUser()">Вийти</a></li>

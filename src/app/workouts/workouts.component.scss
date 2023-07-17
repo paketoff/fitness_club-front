@@ -1,6 +1,11 @@
 .workouts {
 
-  
+  &__wrapper {
+    display: flex; 
+    flex-direction: column; 
+    text-align: center;
+    padding-top: 30px;
+  }
 
   &__item {
     display: flex;
@@ -31,7 +36,7 @@
     margin-top: 100px;
     margin-bottom: 100px;
   }
-  
+
 }
 
 // a loop in SCSS? wtf? The code below gives an order for the workout-items to render them like: 

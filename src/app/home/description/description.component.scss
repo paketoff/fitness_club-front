@@ -1,5 +1,6 @@
 .description{
 
+  width: 100%;
   background-color: #FFF;
 
   &__wrapper {
@@ -35,42 +36,33 @@
   }
 
   &__img_wrapper_equipment{
-    width: 247.909px;
-    height: 238.623px;
+    max-width: 247px;
+    max-height: 238px;
+    padding-left: 40px;
+    margin-top: 50px;
   }
 
   &__img_wrapper_audio{
-    width: 257.859px;
-    height: 193.669px;
+    max-width: 257px;
+    max-height: 193px;
     margin-top: 118px;
+    margin-right: 40px;
   }
 
   &__equipment {
-    width: 1006.876px;
-    height: 223px;
-    margin-top: 168px;
-
+    padding-top: 168px;
     color: #000;
     text-align: justify;
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
   }
 
   &__audio {
-    width: 898.961px;
-    height: 181px;
-    flex-shrink: 0;
-    margin-top: 168px;
-    margin-left: 221px;
-
+    padding-top: 100px;
     color: #000;
     text-align: justify;
     font-size: 32px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
   }
 }
 

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SurveyComponent } from './survey/survey.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -49,6 +49,7 @@ import { HeaderComponent } from './home/header/header.component';
     HttpClientModule,
     NgbModule,
     SubscriptionOrderModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

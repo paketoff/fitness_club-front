@@ -2,22 +2,17 @@
 @import "src/app/buttons.scss";
 
 body {
-  // width: 1920px;
-  // max-width: 1920px;
   background-color: #F4EEEE;
 }
 
-.container {
-  display: grid;
-  // width: 1528px;
-  // max-width: 1528px;
-  width: 1920px;
-  max-width: 1920px;
-  height: auto;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: 20px;
-  padding: 0;
+* {
+
+    margin: 0;
+    padding: 0;
 }
 
-
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
 

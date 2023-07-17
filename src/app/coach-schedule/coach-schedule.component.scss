@@ -1,92 +1,80 @@
-body {
-  background-color: #F4EEEE;
-}
 
-#coach_schedules {
+.schedules {
+  background-color: #F4EEEE;
   padding: 20px;
   
-  .schedules__header {
+  &__header {
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
+    color: #000;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
   }
 
-  .home-button {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    font-size: 14px;
-    background-color: #272727;
-    color: white;
+  &__wrapper {
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+
+  &__item {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    box-shadow: 0px 4px 25px 0px rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.3s ease;
+  }
+
+  &__item:hover {
+    box-shadow: 0px 8px 25px 0px rgba(0, 0, 0, 0.3); /* Изменение тени при наведении */
+  }
+
+  &__details {
+    color: #000;
+    text-align: justify;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  &__filters {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    /* align-content: center; */
+
+  }
+
+  
+
+  &__input_f {
+    width: 210px;
+    height: 40px;
+    background: #FFF;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #2b2c2c;
-    }
+    border: 1px solid #000;
+    margin-top: 20px;
+    padding: 10px; 
+    font-size: 16px; 
+    transition: border-color 0.3s ease;
   }
-
-  .container {
-    .book_form {
-      .schedule-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin-bottom: 10px;
-
-        .schedule-details {
-          p {
-            margin-bottom: 5px;
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-        }
-
-        .booking-button {
-          padding: 10px 20px;
-          font-size: 14px;
-          background-color: #2c2b2b;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-        }
-
-        .profile-img-edit {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-
-          label {
-            align-self: center;
-          }
-
-          input {
-            width: 70%;
-            border: 1px solid #888;
-            border-radius: 5px;
-            padding: 5px;
-            font-size: 16px;
-          }
-
-          .avatar-block {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-
-            img {
-              width: 100%;
-              height: 100%;
-              border-radius: 50%;
-              object-fit: cover;
-            }
-          }
-        }
-      }
-    }
-  }
+  
 }
+

@@ -7,8 +7,14 @@
   height: 1167px;
   max-height: 1167px;
 
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    justify-items: stretch;
+    align-items: end;
+  }
+
   &__header {
-    padding-top: 191px;
     padding-left: 43px;
     color: #000;
     text-align: justify;
@@ -16,9 +22,9 @@
   }
 
   &__subheader {
+    padding-top: 191px;
     text-align: right;
     padding-right: 43px;  
-
     color: #000;
     font-size: 55px;
     font-style: normal;
