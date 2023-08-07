@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AdminGuard } from './admin/admin.guard';
 
 const routes: Routes = [
+  {path: '', component: MainPageComponent},
   {path: 'home', component: MainPageComponent},
   {path: 'survey', component: SurveyComponent},
   {path: 'register', component: RegisterComponent},
